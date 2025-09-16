@@ -1,25 +1,16 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>This is Folder Index</title>
-</head>
-<body>
-    <h1>laravel framework test</h1>
+<x-layout>
+    <h1>current friend network</h1>
+    @if($greeting == "hello")
+        <p>who up finding friends to hangout with rn</p>
+    @endif
     <p>{{$greeting}}</p>
     <ul>
+        @foreach($friends as $friend)
         <li>
-            <a href="/test/{{$friend[0]["id"]}}">
-                {{$friend[0]["name"]}}
-            </a>
+            <x-card href="/test/{{$friend['id']}}" :highlight="$friend['frenpoint'] > 65">
+                <h3>{{$friend['name']}}</h3>
+            </x-card>
         </li>
-        <li>
-            <a href="/test/{{$friend[1]["id"]}}">
-                {{$friend[1]["name"]}}
-            </a>
-        </li>
+        @endforeach
     </ul>
-    
-</body>
-</html>
+</x-layout>

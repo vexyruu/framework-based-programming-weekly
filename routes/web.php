@@ -7,12 +7,17 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    $friend = [
-        ["name" => "iqbal", "skill" => 75, "id" => "1"],
-        ["name" => "ali", "skill" => 60, "id" => "2"]
+    $friends = [
+        ["name" => "iqbal", "frenpoint" => 75, "id" => "1"],
+        ["name" => "ali", "frenpoint" => 60, "id" => "2"]
     ];
-    return view('foldertest.index', ["greeting" => "hello", "friend" => $friend]);
+    return view('foldertest.index', ["greeting" => "hello", "friends" => $friends]);
 });
+
+Route::get('/test/create', function () {
+    return view('foldertest.create');
+});
+
 
 Route::get('/test/{id}', function ($id) {
     return view('foldertest.show', ["id" => $id]);
