@@ -10,8 +10,8 @@
     <header>
         <nav>
             <h1>Friend Network</h1>
-            <a href="/test">All Friends</a>
-            <a href="/test/create">Create New Friends</a>
+            <a href="{{ route('foldertest.index') }}">All Friends</a>
+            <a href="{{ route('foldertest.create') }}">Create New Friends</a>
         </nav>
     </header>
     <main class="container">

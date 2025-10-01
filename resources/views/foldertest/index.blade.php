@@ -1,16 +1,18 @@
-<x-layout>
-    <h1>current friend network</h1>
-    @if($greeting == "hello")
-        <p>who up finding friends to hangout with rn</p>
-    @endif
-    <p>{{$greeting}}</p>
-    <ul>
-        @foreach($friends as $friend)
-        <li>
-            <x-card href="/test/{{$friend['id']}}" :highlight="$friend['frenpoint'] > 65">
-                <h3>{{$friend['name']}}</h3>
-            </x-card>
-        </li>
-        @endforeach
-    </ul>
-</x-layout>
+    <x-layout>
+        <h1>current friend network</h1>
+        @if($greeting == "hello")
+            <p>who up finding friends to hangout with rn</p>
+        @endif
+        <p>{{$greeting}}</p>
+        <ul>
+            @foreach($friends as $friend)
+            <li>
+                <x-card href="{{ route('foldertest.show', $friend->id) }}" :highlight="$friend['skill'] >= 70">
+                    <h3>{{ $friend->name }}</h3>
+                    <p>Fren Level: {{ $friend['frenpoint'] }}</p>
+                </x-card>
+            </li>
+            @endforeach
+        </ul>
+        {{ $friends->links() }}
+    </x-layout>
