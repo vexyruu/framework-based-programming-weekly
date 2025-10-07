@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class friend extends Model
 {
-    protected $fillable = ['name', 'skill', 'bio', 'house_id'];
+    protected $fillable = ['name', 'frenpoint', 'bio', 'house_id'];
     /** @use HasFactory<\Database\Factories\FriendFactory> */
     use HasFactory;
 

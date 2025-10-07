@@ -34,6 +34,12 @@ class FriendController extends Controller
 
       Friend::create($validated);
 
-      return redirect()->route('friends.index');
+      return redirect()->route('foldertest.index')->with('success', 'Friendship created!');
+    }
+    public function destroy(Friend $friend) {
+        $friend->delete();
+
+        return redirect()->route('foldertest.index')->with('success', 'Friendship Deleted!');
     }
 }
+

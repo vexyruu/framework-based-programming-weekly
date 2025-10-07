@@ -13,5 +13,11 @@
         <p><strong>About the House:</strong></p>
         <p>{{ $friend->house->description }}</p>
     </div>
+    <form action="{{ route('foldertest.destroy', $friend->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit" class="btn my-4">Delete Friendship</button>
+    </form>
 
 </x-layout>

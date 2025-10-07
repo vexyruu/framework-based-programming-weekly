@@ -7,7 +7,7 @@
         <ul>
             @foreach($friends as $friend)
             <li>
-                <x-card href="{{ route('foldertest.show', $friend->id) }}" :highlight="$friend['skill'] >= 70">
+                <x-card :highlight="$friend['skill'] > 70" href="{{ route('foldertest.show', $friend->id) }}">
                     <div>
                         <h3>{{ $friend->name }}</h3>
                         <p>{{ $friend->house->name }}</p>

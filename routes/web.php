@@ -11,3 +11,4 @@ Route::get('/friends', [FriendController::class, 'index'])->name('foldertest.ind
 Route::get('/friends/create', [FriendController::class, 'create'])->name('foldertest.create');
 Route::get('/friends/{id}', [FriendController::class, 'show'])->name('foldertest.show');
 Route::post('/friends', [FriendController::class, 'store'])->name('foldertest.store');
+Route::delete('/friends/{friend}', [FriendController::class, 'destroy'])->name('foldertest.destroy');
